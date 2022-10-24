@@ -1,6 +1,23 @@
-# Supplementary material for ICAPS 2022 submission 'Anytime Learning and Verification of Uncertain Markov Decision Processes'
+# LUIaard
+
+Implementation of 'Linearly Updating Intervals' (LUI) for Robust Anytime Learning of Markov Decision Processes (NeurIPS 2022).
+
+---
+
+## Developers
 
 This implementation was build in Java on top of PRISM (probabilistic model checker), see  http://www.prismmodelchecker.org for more.
+
+Main developers:
+* Marnix Suilen
+* Thiago D. Simao
+
+Contributers:
+* David Parker
+* Nils Jansen
+
+---
+
 
 ## Usage
 

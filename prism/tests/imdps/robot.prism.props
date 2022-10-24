@@ -1,0 +1,5 @@
+// RESULT: max(p,0.1+0.1*p)
+Pmaxmin=? [ F "goal1" ]
+
+// RESULT: q
+Pmaxmax=? [ F "goal1" ]

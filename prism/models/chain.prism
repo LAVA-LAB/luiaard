@@ -1,0 +1,21 @@
+mdp
+const double q = 0.8;
+const double p = 0.2;
+
+module chain
+
+	s : [0..4] init 0;
+	
+    [a] true -> 0.5 : (s'=min(s+1,4)) + 0.5 : (s'=0);
+	[b] true -> p : (s'=min(s+1,4)) + 1-p : (s'=0);
+	[c] true -> q : (s'=min(s+1,4)) + 1-q : (s'=0);
+
+endmodule
+
+rewards
+	[a] true : 1;
+	[b] true : 1;
+	[c] true : 1;
+endrewards
+
+label "goal" = s=4;

@@ -1,0 +1,94 @@
+mdp
+
+module tireworld
+	
+	hasspare : bool init false;
+	vehicleat : [0..16] init 2;
+	flattire : bool init false;
+	sparein4 : bool init true;
+	sparein5 : bool init true;
+	sparein7 : bool init true;
+	sparein8 : bool init true;
+	sparein10 : bool init true;
+	sparein12 : bool init true;
+	sparein16 : bool init true;
+
+	[movecar] (vehicleat=0)&(!flattire) -> 0.4:(vehicleat'=12)&(flattire'=!flattire)+0.6:(vehicleat'=12);
+	[movecar] (vehicleat=0)&(!flattire) -> 0.4:(vehicleat'=16)&(flattire'=!flattire)+0.6:(vehicleat'=16);
+
+	[movecar] (vehicleat=1)&(!flattire) -> 0.4:(vehicleat'=2)&(flattire'=!flattire)+0.6:(vehicleat'=2);
+	[movecar] (vehicleat=1)&(!flattire) -> 0.4:(vehicleat'=3)&(flattire'=!flattire)+0.6:(vehicleat'=3);
+
+	[movecar] (vehicleat=2)&(!flattire) -> 0.4:(vehicleat'=1)&(flattire'=!flattire)+0.6:(vehicleat'=1);
+
+	[movecar] (vehicleat=3)&(!flattire) -> 0.4:(vehicleat'=1)&(flattire'=!flattire)+0.6:(vehicleat'=1);
+	[movecar] (vehicleat=3)&(!flattire) -> 0.4:(vehicleat'=4)&(flattire'=!flattire)+0.6:(vehicleat'=4);
+	[movecar] (vehicleat=3)&(!flattire) -> 0.4:(vehicleat'=13)&(flattire'=!flattire)+0.6:(vehicleat'=13);
+	[movecar] (vehicleat=3)&(!flattire) -> 0.4:(vehicleat'=14)&(flattire'=!flattire)+0.6:(vehicleat'=14);
+
+	[movecar] (vehicleat=4)&(!flattire) -> 0.4:(vehicleat'=3)&(flattire'=!flattire)+0.6:(vehicleat'=3);
+
+	[movecar] (vehicleat=5)&(!flattire) -> 0.4:(vehicleat'=8)&(flattire'=!flattire)+0.6:(vehicleat'=8);
+	[movecar] (vehicleat=5)&(!flattire) -> 0.4:(vehicleat'=10)&(flattire'=!flattire)+0.6:(vehicleat'=10);
+	[movecar] (vehicleat=5)&(!flattire) -> 0.4:(vehicleat'=16)&(flattire'=!flattire)+0.6:(vehicleat'=16);
+
+	[movecar] (vehicleat=6)&(!flattire) -> 0.4:(vehicleat'=14)&(flattire'=!flattire)+0.6:(vehicleat'=14);
+
+	[movecar] (vehicleat=7)&(!flattire) -> 0.4:(vehicleat'=9)&(flattire'=!flattire)+0.6:(vehicleat'=9);
+	[movecar] (vehicleat=7)&(!flattire) -> 0.4:(vehicleat'=13)&(flattire'=!flattire)+0.6:(vehicleat'=13);
+
+	[movecar] (vehicleat=8)&(!flattire) -> 0.4:(vehicleat'=9)&(flattire'=!flattire)+0.6:(vehicleat'=9);
+	[movecar] (vehicleat=8)&(!flattire) -> 0.4:(vehicleat'=5)&(flattire'=!flattire)+0.6:(vehicleat'=5);
+
+	[movecar] (vehicleat=9)&(!flattire) -> 0.4:(vehicleat'=7)&(flattire'=!flattire)+0.6:(vehicleat'=7);
+	[movecar] (vehicleat=9)&(!flattire) -> 0.4:(vehicleat'=8)&(flattire'=!flattire)+0.6:(vehicleat'=8);
+	[movecar] (vehicleat=9)&(!flattire) -> 0.4:(vehicleat'=12)&(flattire'=!flattire)+0.6:(vehicleat'=12);
+	[movecar] (vehicleat=9)&(!flattire) -> 0.4:(vehicleat'=16)&(flattire'=!flattire)+0.6:(vehicleat'=16);
+
+	[movecar] (vehicleat=10)&(!flattire) -> 0.4:(vehicleat'=5)&(flattire'=!flattire)+0.6:(vehicleat'=5);
+	[movecar] (vehicleat=10)&(!flattire) -> 0.4:(vehicleat'=13)&(flattire'=!flattire)+0.6:(vehicleat'=13);
+	[movecar] (vehicleat=10)&(!flattire) -> 0.4:(vehicleat'=12)&(flattire'=!flattire)+0.6:(vehicleat'=12);
+
+	[movecar] (vehicleat=11)&(!flattire) -> 0.4:(vehicleat'=16)&(flattire'=!flattire)+0.6:(vehicleat'=16);
+
+	[movecar] (vehicleat=12)&(!flattire) -> 0.4:(vehicleat'=0)&(flattire'=!flattire)+0.6:(vehicleat'=0);
+	[movecar] (vehicleat=12)&(!flattire) -> 0.4:(vehicleat'=9)&(flattire'=!flattire)+0.6:(vehicleat'=9);
+	[movecar] (vehicleat=12)&(!flattire) -> 0.4:(vehicleat'=10)&(flattire'=!flattire)+0.6:(vehicleat'=10);
+	[movecar] (vehicleat=12)&(!flattire) -> 0.4:(vehicleat'=16)&(flattire'=!flattire)+0.6:(vehicleat'=16);
+
+	[movecar] (vehicleat=13)&(!flattire) -> 0.4:(vehicleat'=3)&(flattire'=!flattire)+0.6:(vehicleat'=3);
+	[movecar] (vehicleat=13)&(!flattire) -> 0.4:(vehicleat'=7)&(flattire'=!flattire)+0.6:(vehicleat'=7);
+	[movecar] (vehicleat=13)&(!flattire) -> 0.4:(vehicleat'=10)&(flattire'=!flattire)+0.6:(vehicleat'=10);
+	[movecar] (vehicleat=13)&(!flattire) -> 0.4:(vehicleat'=15)&(flattire'=!flattire)+0.6:(vehicleat'=15);
+
+	[movecar] (vehicleat=14)&(!flattire) -> 0.4:(vehicleat'=3)&(flattire'=!flattire)+0.6:(vehicleat'=3);
+	[movecar] (vehicleat=14)&(!flattire) -> 0.4:(vehicleat'=6)&(flattire'=!flattire)+0.6:(vehicleat'=6);
+	[movecar] (vehicleat=14)&(!flattire) -> 0.4:(vehicleat'=16)&(flattire'=!flattire)+0.6:(vehicleat'=16);
+
+	[movecar] (vehicleat=15)&(!flattire) -> 0.4:(vehicleat'=13)&(flattire'=!flattire)+0.6:(vehicleat'=13);
+
+	[movecar] (vehicleat=16)&(!flattire) -> 0.4:(vehicleat'=0)&(flattire'=!flattire)+0.6:(vehicleat'=0);
+	[movecar] (vehicleat=16)&(!flattire) -> 0.4:(vehicleat'=5)&(flattire'=!flattire)+0.6:(vehicleat'=5);
+	[movecar] (vehicleat=16)&(!flattire) -> 0.4:(vehicleat'=9)&(flattire'=!flattire)+0.6:(vehicleat'=9);
+	[movecar] (vehicleat=16)&(!flattire) -> 0.4:(vehicleat'=11)&(flattire'=!flattire)+0.6:(vehicleat'=11);
+	[movecar] (vehicleat=16)&(!flattire) -> 0.4:(vehicleat'=12)&(flattire'=!flattire)+0.6:(vehicleat'=12);
+	[movecar] (vehicleat=16)&(!flattire) -> 0.4:(vehicleat'=14)&(flattire'=!flattire)+0.6:(vehicleat'=14);
+
+	[loadtire] (vehicleat=4)&(sparein4) -> (hasspare'=true)&(sparein4'=false);
+	[loadtire] (vehicleat=5)&(sparein5) -> (hasspare'=true)&(sparein5'=false);
+	[loadtire] (vehicleat=7)&(sparein7) -> (hasspare'=true)&(sparein7'=false);
+	[loadtire] (vehicleat=8)&(sparein8) -> (hasspare'=true)&(sparein8'=false);
+	[loadtire] (vehicleat=10)&(sparein10) -> (hasspare'=true)&(sparein10'=false);
+	[loadtire] (vehicleat=12)&(sparein12) -> (hasspare'=true)&(sparein12'=false);
+	[loadtire] (vehicleat=16)&(sparein16) -> (hasspare'=true)&(sparein16'=false);
+	[changetire] (hasspare) -> 0.5:(hasspare'=false)&(flattire'=!flattire)+0.5:true;
+
+endmodule
+
+rewards
+	[movecar] true : 1;
+	[loadtire] true : 1;
+	[changetire] true : 1;
+endrewards
+
+label "goal" = (vehicleat=0);

@@ -1,0 +1,21 @@
+mdp
+
+const double p = 0.2;
+
+module tiny
+
+	s : [0..2] init 0;
+	
+	[a] s=0 -> p : (s'=1) +  1-p : (s'=2);
+	[b] s=0 -> 1 : (s'=2);
+	[c] s=1 -> 1 : (s'=2);
+
+endmodule
+
+rewards
+	[a] true : 0;
+	[b] true : 10;
+	[c] true : 19;
+endrewards
+
+label "goal" = s=2;

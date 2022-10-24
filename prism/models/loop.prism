@@ -1,0 +1,36 @@
+mdp
+
+const int K = 3;
+const double p = 0.1;
+const double q = 0.1;
+const double r = 0.9;
+
+module loop
+
+	s : [0..8] init 0;
+	loops : [0..K] init 0;
+
+	[a]  s = 0 & loops < K -> (s'=1);
+	[a]  s = 1 & loops < K -> (s'=2);
+	[a]  s = 2 & loops < K -> p : (s'=0) & (loops'=loops+1) + 1-p : (s'=3);
+	[a]  s = 3 & loops < K -> (s'=4);
+	[a]  s = 4 & loops < K -> (s'=0) & (loops' = loops+1);
+
+	[b]  s = 0 & loops < K -> (s'=5);
+	[b]  s = 5 & loops < K -> q : (s'=0) & (loops'=loops+1) + 1-q : (s'=6);
+	[b]  s = 6 & loops < K -> (s'=7);
+	[b]  s = 7 & loops < K -> r : (s'=0) & (loops'=loops+1) + 1-r : (s'=8);
+	[b]  s = 8 & loops < K -> (s'=0) & (loops' = loops+1);
+
+	[a] loops = K -> 1 : true;
+	[b] loops = K -> 1 : true;
+
+endmodule
+
+
+rewards
+	[a] s=4 & loops < K : 1;
+	[b] s=8 & loops < K : 3;
+endrewards
+
+label "goal" = loops=K;

@@ -10,7 +10,7 @@ This implementation was build in Java on top of PRISM (probabilistic model check
 
 Main developers:
 * Marnix Suilen
-* Thiago D. Simao
+* Thiago D. Simão
 
 Contributers:
 * David Parker

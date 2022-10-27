@@ -1,6 +1,6 @@
 # LUIaard
 
-Implementation of 'Linearly Updating Intervals' (LUI) for Robust Anytime Learning of Markov Decision Processes (NeurIPS 2022).
+Implementation of 'Linearly Updating Intervals' (LUI) for [Robust Anytime Learning of Markov Decision Processes](https://arxiv.org/abs/2205.15827) (NeurIPS 2022).
 
 ---
 

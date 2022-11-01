@@ -34,7 +34,5 @@ The `prism/notebooks` directory contains python scripts to plot the results.
 
 The models can be found in the `prism/models` directory.
 
-The zip file `results.zip` contains all the raw output used to make the plots in the paper.
-
 
 ***

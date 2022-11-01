@@ -23,31 +23,18 @@ Contributers:
 
 To run the experiments from the paper:
 
- * enter the PRISM directory and type `cd prism` then `make`
- * run `PRISM_MAINCLASS=prism.LearnVerify bin/prism` from the same directory
- * `python run.py $(seq -s \  0 99) --cpus 2`
+ * enter the PRISM directory and type `cd prism` then `make`.
+ * run `python run.py $(seq -s \  0 99) --cpus 2` to run all experiments presented in the paper for seeds 0..99 in parallel on 2 CPUs.
 
-This will run all experiments from the paper with a fixed seed.run.
-The output is saved on the folder `prism/results`.
+The output is saved in the folder `prism/results` in seperate files/folders for each experiments and seed.
 
-## Modifying experiments
-
-To modify the experiments open prism/src/prism/LearnVerify.java
-
- * to run with random seed: set `FIXED_SEED` to `false`
-
-to modify the experiments, go to the `main` method
-
- * for a basic comparison between algorithm use the method `run_basic_algorithms`
- * to analyze the effects of the prior strength use the method `strength_evaluation;`
-
-All experiments reset the seed if the seed is fixed, i.e., multiple experiments can safely be defined and enabled right after each other.
-
-Note that whenever the source code changes, you have to run `make` again.
+The `prism/notebooks` directory contains python scripts to plot the results.
 
 ## Datasets (models)
 
 The models can be found in the `prism/models` directory.
+
+The zip file `results.zip` contains all the raw output used to make the plots in the paper.
 
 
 ***

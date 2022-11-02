@@ -50,7 +50,6 @@ public class LearnVerify {
                 l.basic();
                 l.switching_environment();
                 l.gridStrengthEval();
-                //l.evaluate_strength();
             }
         }
         else {
@@ -59,20 +58,15 @@ public class LearnVerify {
             l.basic();
             l.switching_environment();
             l.gridStrengthEval();
-//            l.evaluate_strength();
         }
     }
 
     public void basic() {
         String id = "basic";
-        //run_basic_algorithms(new Experiment(Model.CHAIN_SMALL).config(100, 1000, seed).info(id));
-        //run_basic_algorithms(new Experiment(Model.LOOP).config(100, 1000, seed).info(id));
         run_basic_algorithms(new Experiment(Model.AIRCRAFT).config(1000, 1000000, seed).info(id));
         run_basic_algorithms(new Experiment(Model.BANDIT).config(100, 1000000, seed).stratWeight(0.9).info(id));
         run_basic_algorithms(new Experiment(Model.BETTING_GAME_FAVOURABLE).config(7, 1000000, seed).stratWeight(0.9).info(id));
         run_basic_algorithms(new Experiment(Model.BETTING_GAME_UNFAVOURABLE).config(7, 1000000, seed).info(id));
-        //run_basic_algorithms(new Experiment(Model.TINY).config(2, 50000, seed).info(id));
-        //run_basic_algorithms(new Experiment(Model.TINY2).config(2, 50000, seed).info(id));
         run_basic_algorithms(new Experiment(Model.CHAIN_LARGE).config(100, 1000000, seed).info(id));
         run_basic_algorithms(new Experiment(Model.GRID).config(200, 1000000, seed, 20, 30).info(id));
     }
@@ -83,8 +77,6 @@ public class LearnVerify {
         compareSamplingStrategies("PAC1" + postfix, ex.setErrorTol(0.01), PACIntervalEstimatorOptimistic::new);
         compareSamplingStrategies("MAP_uni" + postfix, ex, MAPEstimator::new);
         compareSamplingStrategies("LUI" + postfix, ex, BayesianEstimatorOptimistic::new);
-        //ex.initialInterval = Experiment.InitialInterval.UNIFORM;
-        //new LearnVerify(ex.seed).compareSamplingStrategies("Bayes(uniform prior)", ex, BayesianEstimatorOptimistic::new);
     }
 
     public void gridStrengthEval() {
@@ -191,13 +183,6 @@ public class LearnVerify {
         compareSamplingStrategies("MAP_lowbound" + postfix, ex1, MAPEstimator::new, ex2);
         compareSamplingStrategies("LUI_lowbound" + postfix, ex1, BayesianEstimatorOptimistic::new, ex2);
 
-        //new LearnVerify(true).compareSamplingStrategies("Bayes-SW-small" + postfix, ex1.setStrengthBounds(10, 20), BayesianEstimatorWeightedOptimistic::new, ex2.setStrengthBounds(10, 20));
-        //new LearnVerify(true).compareSamplingStrategies("Bayes-SW-large" + postfix, ex1.setStrengthBounds(100, 200), BayesianEstimatorWeightedOptimistic::new, ex2.setStrengthBounds(100, 200));
-        //new LearnVerify(true).compareSamplingStrategies("Bayes-uni" + postfix, ex1, BayesianEstimatorUniform::new, ex2);
-        //new LearnVerify(true).compareSamplingStrategies("Bayes-uni-SW-small" + postfix, ex1.setStrengthBounds(10, 20), BayesianEstimatorUniform::new, ex2.setStrengthBounds(10, 20));
-        //new LearnVerify(true).compareSamplingStrategies("Bayes-uni-SW-large" + postfix, ex1.setStrengthBounds(100, 200), BayesianEstimatorUniform::new, ex2.setStrengthBounds(100, 200));
-        //ex1.initialInterval = Experiment.InitialInterval.UNIFORM;
-        //new LearnVerify(true).compareSamplingStrategies("Bayes(uniform prior)" + postfix, ex1, BayesianEstimatorOptimistic::new, ex2);
     }
 
     @SuppressWarnings("unchecked")

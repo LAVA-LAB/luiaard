@@ -8,14 +8,14 @@ Implementation of 'Linearly Updating Intervals' (LUI) for [Robust Anytime Learni
 
 ## Developers
 
-This implementation was build in Java on top of PRISM (probabilistic model checker), see  http://www.prismmodelchecker.org for more.
+This implementation was built in Java on top of PRISM (probabilistic model checker), see  http://www.prismmodelchecker.org for more.
 
 Main developers:
 * Marnix Suilen
 * Thiago D. Simão
 * David Parker
 
-Contributers:
+Contributors:
 * Nils Jansen
 
 ---
